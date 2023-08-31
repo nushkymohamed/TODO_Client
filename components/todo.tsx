@@ -9,6 +9,7 @@ const api_base = 'http://localhost:8080/';
 
 interface Todo {
     _id: string;
+    title: string;
     text: string;
     complete: boolean;
 }
@@ -72,6 +73,7 @@ export const Todo = () => {
                         "todo" + (todo.complete ? " is-complete" : "")
                     } key={todo._id} onClick={() => completeTodo(todo._id)}>
                         <div className="checkbox"></div>
+                        <div className="text-sm">{todo.title}</div>
                         <div className="text">{todo.text}</div>
                         <div className="delete-todo" onClick={() => deleteTodo(todo._id)}>x</div>
                     </div>
